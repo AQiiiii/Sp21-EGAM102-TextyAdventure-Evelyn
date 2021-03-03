@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class GameController : MonoBehaviour
 {
     
-    public List<string> SceneInventory, PlayerInventory;
+    public List<string> SceneInventory, PlayerInventory, Equiped;
    
     public Text OutputText;
 
@@ -60,14 +60,14 @@ public class GameController : MonoBehaviour
                 PlayerInventory.Add("snake");
                
                 Invoke("MoveScrollbarToBottom", .1f);
-                
-                if(inputWords[3] == "door" && PlayerInventory.Contains("door"))
+
+                if(inputWords[2] == "door" && PlayerInventory.Contains("door"))
                 {
                     OutputText.text += "Go straight for 30 meters, then turn right and walk 10 meters. There is a gate.";
                
                     Invoke("MoveScrollbarToBottom", .1f);
                 }
-                if(inputWords[3] == "snake" && PlayerInventory.Contains("snake"))
+                if(inputWords[2] == "snake" && PlayerInventory.Contains("snake"))
                 {
                     OutputText.text += "There's a snake behind you!";
                
@@ -84,12 +84,25 @@ public class GameController : MonoBehaviour
                     SceneInventory.Remove("hat");
                     GameObject.Find("BaseballCap").GetComponent<SpriteRenderer>().enabled = false;
                     PlayerInventory.Add("hat");
-                    
+                 
                     OutputText.text += "you pick up the hat!";
                
                     Invoke("MoveScrollbarToBottom", .1f);
 
                 }
+
+                if(inputWords[1] == "flower" && SceneInventory.Contains("flower")) 
+                {
+                    SceneInventory.Remove("flower");
+                    GameObject.Find("flower").GetComponent<SpriteRenderer>().enabled = false;
+                    PlayerInventory.Add("flower");
+                 
+                    OutputText.text += "you pick up the flower!";
+               
+                    Invoke("MoveScrollbarToBottom", .1f);
+
+                }
+
                 if(inputWords[1] == "mask" && SceneInventory.Contains("mask")) 
                 {
                     SceneInventory.Remove("mask");
@@ -127,6 +140,31 @@ public class GameController : MonoBehaviour
                 }
                 
             }
+
+            else if(inputWords[0] == "cook")
+            {
+                if(inputWords[1] == "hat" && PlayerInventory.Contains("hat")&&inputWords[2] == "flower" && PlayerInventory.Contains("flower"))
+                {
+                    PlayerInventory.Remove("hat");
+                    PlayerInventory.Remove("flower");
+                    PlayerInventory.Add("fancyhat");
+                    OutputText.text += "fancyhat! " + inputWords[1]+".\n";
+               
+                    Invoke("MoveScrollbarToBottom", .1f); 
+                }
+                else
+                {
+                    OutputText.text += "no " + inputWords[1]+".\n";
+               
+                    Invoke("MoveScrollbarToBottom", .1f); 
+                }
+                if(inputWords[1] == "mask" && PlayerInventory.Contains("mask"))
+                {
+                    GameObject.Find("maskonface").GetComponent<SpriteRenderer>().enabled = true;
+                }
+                
+            }
+
             else if(inputWords[0] == "i")
             {
                 string inventoryString = "You have:";
