@@ -141,6 +141,8 @@ public class GameController : MonoBehaviour
                 
             }
 
+           
+
             else if(inputWords[0] == "cook")
             {
                 if(inputWords[1] == "hat" && PlayerInventory.Contains("hat")&&inputWords[2] == "flower" && PlayerInventory.Contains("flower"))

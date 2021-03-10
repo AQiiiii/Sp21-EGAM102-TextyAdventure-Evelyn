@@ -5,4 +5,5 @@ using UnityEngine;
 public class tree : MonoBehaviour
 {
     public int Wood, Coins;
+    
 }
