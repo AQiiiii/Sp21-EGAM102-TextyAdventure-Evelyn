@@ -9,7 +9,7 @@ public class GameController : MonoBehaviour
     public List<string> SceneInventory, PlayerInventory, Equiped;
    
     public Text OutputText;
-
+    public GameObject beebuddy;
     
     public Scrollbar VerticalScrollbar;
 
@@ -23,7 +23,7 @@ public class GameController : MonoBehaviour
     {
        
         OutputText.text = "The game is afoot!";
-       
+        beebuddy = GameObject.Find("beebuddy");
         Invoke("MoveScrollbarToBottom", .1f);
         PlayerInventory = new List<string>();
     }
@@ -139,6 +139,26 @@ public class GameController : MonoBehaviour
                     GameObject.Find("maskonface").GetComponent<SpriteRenderer>().enabled = true;
                 }
                 
+            }
+
+            else if (inputWords[0] == "beebuddy")
+            {
+                if (inputWords[1] == "jump")
+                {
+                    beebuddy.GetComponent<Animator>().SetTrigger("Jump");
+                }
+                else if (inputWords[1] == "fly") 
+                {
+                    beebuddy.GetComponent<Animator>().SetTrigger("Fly");
+                }
+                else if (inputWords[1] == "sit")
+                {
+                    beebuddy.GetComponent<Animator>().SetTrigger("Sit");
+                }
+                else if (inputWords[1] == "spin")
+                {
+                    beebuddy.GetComponent<Animator>().SetTrigger("Spin");
+                }
             }
 
            
