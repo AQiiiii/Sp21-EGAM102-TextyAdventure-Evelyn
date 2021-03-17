@@ -14,6 +14,8 @@ public class GameController : MonoBehaviour
     public enum Location {location1,location2,location3,location4,location5}
 
     public Location CurrentLocation; 
+
+   
     
     public Scrollbar VerticalScrollbar;
 
@@ -79,6 +81,27 @@ public class GameController : MonoBehaviour
                 }
   
             }
+            else if (CurrentLocation == Location.location1)
+            {
+                Do1();
+            }
+            else if (CurrentLocation == Location.location2)
+            {
+                Do2();
+            }
+            else if (CurrentLocation == Location.location3)
+            {
+                Do3();
+            }
+            else if (CurrentLocation == Location.location4)
+            {
+                Do4();
+            }
+            else if (CurrentLocation == Location.location5)
+            {
+                Do5();
+            }
+
             
 
             else if (inputWords[0] == "get")
@@ -228,5 +251,118 @@ public class GameController : MonoBehaviour
             InputText.ActivateInputField();
         }
     }
+    void Do1()
+        {
+            InputText.text = InputText.text.ToLower();
+
+            
+            string[] inputWords = InputText.text.Split(spaceCharacter);
+
+
+            if (inputWords[0] == "east")
+            {
+                GetComponent<Animator>().SetTrigger("East");
+            }
+            if (inputWords[0] == "north")
+            {
+                GetComponent<Animator>().SetTrigger("North");
+            }if (inputWords[0] == "south")
+            {
+                GetComponent<Animator>().SetTrigger("South");
+            }if (inputWords[0] == "west")
+            {
+                GetComponent<Animator>().SetTrigger("West");
+            }
+        }    
+    void Do2()
+        {
+            InputText.text = InputText.text.ToLower();
+
+            
+            string[] inputWords = InputText.text.Split(spaceCharacter);
+
+            if (inputWords[0] == "east")
+            {
+                GetComponent<Animator>().SetTrigger("East");
+            }
+            if (inputWords[0] == "north")
+            {
+                GetComponent<Animator>().SetTrigger("North");
+            }if (inputWords[0] == "south")
+            {
+                GetComponent<Animator>().SetTrigger("South");
+            }if (inputWords[0] == "west")
+            {
+                GetComponent<Animator>().SetTrigger("West");
+            }
+        }
+    void Do3()
+        {
+            InputText.text = InputText.text.ToLower();
+
+            
+            string[] inputWords = InputText.text.Split(spaceCharacter);
+
+            if (inputWords[0] == "east")
+            {
+                GetComponent<Animator>().SetTrigger("East");
+            }
+            if (inputWords[0] == "north")
+            {
+                GetComponent<Animator>().SetTrigger("North");
+            }if (inputWords[0] == "south")
+            {
+                GetComponent<Animator>().SetTrigger("South");
+            }if (inputWords[0] == "west")
+            {
+                GetComponent<Animator>().SetTrigger("West");
+            }
+        }
+
+        void Do4()
+        {
+            InputText.text = InputText.text.ToLower();
+
+            
+            string[] inputWords = InputText.text.Split(spaceCharacter);
+
+            if (inputWords[0] == "east")
+            {
+                GetComponent<Animator>().SetTrigger("East");
+            }
+            if (inputWords[0] == "north")
+            {
+                GetComponent<Animator>().SetTrigger("North");
+            }if (inputWords[0] == "south")
+            {
+                GetComponent<Animator>().SetTrigger("South");
+            }if (inputWords[0] == "west")
+            {
+                GetComponent<Animator>().SetTrigger("West");
+            }
+        }
+
+        void Do5()
+        {
+            InputText.text = InputText.text.ToLower();
+
+            
+            string[] inputWords = InputText.text.Split(spaceCharacter);
+
+            if (inputWords[0] == "east")
+            {
+                GetComponent<Animator>().SetTrigger("East");
+            }
+            if (inputWords[0] == "north")
+            {
+                    GetComponent<Animator>().SetTrigger("North");
+            }if (inputWords[0] == "south")
+            {
+                GetComponent<Animator>().SetTrigger("South");
+            }if (inputWords[0] == "west")
+            {
+                GetComponent<Animator>().SetTrigger("West");
+            }
+        }
 
 }
