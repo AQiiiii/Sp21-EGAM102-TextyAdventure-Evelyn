@@ -10,6 +10,10 @@ public class GameController : MonoBehaviour
    
     public Text OutputText;
     public GameObject beebuddy;
+
+    public enum Location {location1,location2,location3,location4,location5}
+
+    public Location CurrentLocation; 
     
     public Scrollbar VerticalScrollbar;
 
